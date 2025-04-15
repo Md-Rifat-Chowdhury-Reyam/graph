@@ -1,4 +1,4 @@
-package Adjacency;
+package Adjacency.Matrix;
 
 public class AddRmVerAdjMat {
 
