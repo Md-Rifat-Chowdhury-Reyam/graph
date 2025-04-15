@@ -62,10 +62,37 @@ public class AddRmVerAdjMat {
         //increase vertex or node
         n++;
 
+        //initializing the new vertex or element to zero;
         for( int i = 0; i < n ; i++)
         {
             adjacencyMatrix[n-1][i] = 0;
             adjacencyMatrix[i][n-1] = 0;
+        }
+    }
+
+    public void removeVertex(int x)
+    {
+        if(x > n)
+        {
+            System.out.println("vertex not present");
+            return;
+        } else
+        {
+            //remove vertex;
+            while(x < n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    adjacencyMatrix[i][x] = adjacencyMatrix[i][n+1];
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    adjacencyMatrix[ x ][ i ] = adjacencyMatrix[ n + 1][ i ];
+                }
+                x++;
+            }
+            n--; // decrease vertex;
         }
     }
 
@@ -79,12 +106,13 @@ public class AddRmVerAdjMat {
         addG.addedges(0,2);
         addG.addedges(1,2);
         addG.addedges(2,3);
-
         addG.displayMatrix();
 
         addG.addVertex();
         addG.addedges(4,3);
+        addG.displayMatrix();
 
+        addG.removeVertex(4);
         addG.displayMatrix();
 
     }
