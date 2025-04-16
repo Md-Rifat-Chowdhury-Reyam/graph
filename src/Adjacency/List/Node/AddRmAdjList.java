@@ -1,4 +1,4 @@
-package Adjacency.List;
+package Adjacency.List.Node;
 
 public class AddRmAdjList {
 
