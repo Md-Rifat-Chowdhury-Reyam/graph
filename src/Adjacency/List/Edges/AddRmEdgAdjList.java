@@ -29,26 +29,24 @@ public class AddRmEdgAdjList {
                 break;
             }
         }
-        {
 
-        }
     }
 
     static void displayEdges(Vector<Integer>[] adjList, int v)
     {
         for (int i = 0; i < v; i++)
         {
-            System.out.println("Vertex" + v);
-            for(Integer x : adjList[v])
+            System.out.print("Vertex" + i);
+            for(Integer x : adjList[i])
             {
-                System.out.println("->" + x);
+                System.out.print("->" + x);
             }
-            System.out.println("\n");
+            System.out.println(" ");
         }
     }
 
     public static void main(String[] args) {
-        int v = 4;
+        int v = 6;
         Vector<Integer>[] adjL = new Vector[v];
         for(int i = 0; i < v; i++)
         {
@@ -58,6 +56,10 @@ public class AddRmEdgAdjList {
         addEdges(adjL,0,1);
         addEdges(adjL,0,2);
         addEdges(adjL,1,2);
+
+        addEdges(adjL,1,3);
+        addEdges(adjL,2,3);
+        addEdges(adjL,3,4);
 
         displayEdges(adjL, v);
 
