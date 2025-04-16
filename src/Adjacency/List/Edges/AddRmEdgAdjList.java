@@ -10,6 +10,30 @@ public class AddRmEdgAdjList {
         adjList[y].add(x);
     }
 
+    static  void delEdges(Vector<Integer>[] adjList, int x, int y)
+    {
+        for(int i = 0; i < adjList[x].size(); i++)
+        {
+            if(adjList[x].get(i) == y)
+            {
+                adjList[x].remove(i);
+                        break;
+            }
+        }
+
+        for(int i = 0 ; i < adjList[y].size(); i++ )
+        {
+            if(adjList[y].get(i) == x)
+            {
+                adjList[y].remove(i);
+                break;
+            }
+        }
+        {
+
+        }
+    }
+
     static void displayEdges(Vector<Integer>[] adjList, int v)
     {
         for (int i = 0; i < v; i++)
