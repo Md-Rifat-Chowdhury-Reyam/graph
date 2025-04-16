@@ -60,7 +60,25 @@ public class AddRmEdgAdjMat {
     //remove the Edges
     public void removeEdges(int x, int y)
     {
-        if()
+        if(x < 0 || x >=n)
+        {
+            System.out.println("Vertex doesn't exit");
+        }
+        if(y < 0 || y >= n)
+        {
+            System.out.println("vertex doesn't exit");
+        }
+        if(x == y)
+        {
+            System.out.println("Both vertex are same");
+        }
+
+        else
+        {
+            grapM[x][y] = 0;
+            grapM[y][x] = 0;
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -72,6 +90,9 @@ public class AddRmEdgAdjMat {
         adM.addEdges(1,2);
         adM.addEdges(0,2);
         adM.addEdges(2,3);
+        adM.displayMatrix();
+
+        adM.removeEdges(0,1);
         adM.displayMatrix();
     }
 }
