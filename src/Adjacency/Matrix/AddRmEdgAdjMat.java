@@ -27,8 +27,33 @@ public class AddRmEdgAdjMat {
             System.out.println();
             for(int j = 0; j < n; j++)
             {
-                System.out.println(" " + grapM[i][j]);
+                System.out.print(" " + grapM[i][j]);
             }
         }
+        System.out.println();
+    }
+
+    public void addEdges(int x, int y)
+    {
+        //check vertex
+        if(x < 0 || x >= n)
+        {
+            System.out.println("vertex "+ x +" doesn't exist");
+        }
+        if(y < 0 || y >= n)
+        {
+            System.out.println("vertex " + y + " doesn't exist");
+        }
+        if(x == y ) {
+            System.out.println("same vertex" + x + " " + y);
+        }
+        else
+        {
+            //Insert edges;
+            grapM[x][y] = 1;
+            grapM[y][x] = 1;
+
+        }
+
     }
 }
