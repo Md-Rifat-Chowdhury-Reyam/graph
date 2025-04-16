@@ -56,4 +56,22 @@ public class AddRmEdgAdjMat {
         }
 
     }
+
+    //remove the Edges
+    public void removeEdges(int x, int y)
+    {
+        if()
+    }
+
+    public static void main(String[] args) {
+
+        int v =4;
+        AddRmEdgAdjMat adM = new AddRmEdgAdjMat(v);
+
+        adM.addEdges(0,1);
+        adM.addEdges(1,2);
+        adM.addEdges(0,2);
+        adM.addEdges(2,3);
+        adM.displayMatrix();
+    }
 }
