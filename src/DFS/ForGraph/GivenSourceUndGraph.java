@@ -30,5 +30,11 @@ class recursiveDFS
 
     }
 
+    public static void addEdges(ArrayList<ArrayList<Integer>> adjM, int x, int y)
+    {
+        adjM.get(x).add(y);
+        adjM.get(y).add(x);
+    }
+
 
 }
