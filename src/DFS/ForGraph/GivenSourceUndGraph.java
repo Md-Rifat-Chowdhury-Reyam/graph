@@ -2,17 +2,34 @@ package DFS.ForGraph;
 
 import java.util.ArrayList;
 
-public class GivenSourceUndGraph {
+public class GivenSourceUndGraph extends dfsRec {
 
     public static void main(String[] args) {
 
+
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-        int v = 5; // nodes
+        int v = 6; // nodes
         for(int i = 0; i < v; i++)// initialized adjacent list
         {
             adj.add(new ArrayList<>());
         }
+
+
+
+
+        int[][] edges = { { 1, 2 }, { 2, 0 }, { 0, 3 },{3,4}, { 4, 5 } };
+        for(int[] i  : edges)
+        {
+            addEdges(adj, i[0], i[1]);
+
+        }
+        ArrayList<Integer> res = DFS(adj);
+
+       for(int i : res)
+       {
+           System.out.print(i +" ");
+       }
     }
 }
 
