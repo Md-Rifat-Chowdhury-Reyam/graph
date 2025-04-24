@@ -6,6 +6,13 @@ public class GivenSourceUndGraph {
 
     public static void main(String[] args) {
 
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        int v = 5; // nodes
+        for(int i = 0; i < v; i++)// initialized adjacent list
+        {
+            adj.add(new ArrayList<>());
+        }
     }
 }
 
