@@ -24,6 +24,13 @@ class dfsRec
             }
         }
 
-
     }
+
+    public static void addEdges(ArrayList<ArrayList<Integer>> adj , int source, int tree)
+    {
+        adj.get(source).add(tree);
+        adj.get(tree).add(source);
+    }
+
+
 }
