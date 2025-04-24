@@ -2,8 +2,34 @@ package DFS.ForGraph;
 
 import java.util.ArrayList;
 
-public class GivenSourceUndGraph  {
+public class GivenSourceUndGraph extends recursiveDFS {
     public static void main(String[] args) {
+
+        ArrayList<ArrayList<Integer>> adjM = new ArrayList<>();
+
+        int v = 5;
+
+        for (int i = 0; i < v; i++) //initialize adjacent list
+        {
+            adjM.add(new ArrayList<>());
+        }
+
+        //edges add
+        int[][] edges = { { 1, 2 },{ 1, 0 },{ 2, 0 },{ 2, 3 },{ 2, 4 } };
+        for(int[] i : edges)
+        {
+            addEdges(adjM, i[0], i[1]);
+        }
+
+        ArrayList<Integer> res = RecDFS(adjM);
+
+        for(int i : res)
+        {
+            System.out.print(res.get(i));
+        }
+
+
+
 
     }
 
