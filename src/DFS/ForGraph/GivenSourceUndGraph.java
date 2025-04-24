@@ -11,7 +11,7 @@ public class GivenSourceUndGraph  {
 
 class recursiveDFS
 {
-    //methods: 1.recursive 2.add edges 3.print dfs
+    //methods: 1.recursive 2.add edges 3.Initialize visited array
 
     public static void recursive(ArrayList<ArrayList<Integer>> adjMAt , boolean[] visited, int sourceNode, ArrayList<Integer> res )
     {
@@ -34,6 +34,16 @@ class recursiveDFS
     {
         adjM.get(x).add(y);
         adjM.get(y).add(x);
+    }
+
+    //initialize the visited array and again call recursive method
+    public static ArrayList<Integer> RecDFS(ArrayList<ArrayList<Integer>> adjM)
+    {
+        boolean[] visited = new boolean[adjM.size()]; // visited boolean array initialize;
+        ArrayList<Integer> res = new ArrayList<>(); // restore stack list initialize;
+
+        recursive(adjM, visited, 0,res);
+        return res;
     }
 
 
