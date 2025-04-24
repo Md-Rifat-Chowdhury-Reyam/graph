@@ -11,10 +11,18 @@ public class GivenSourceUndGraph {
 
 class dfsRec
 {
-    public static void Recursive(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int source, ArrayList<Integer> res)
+    public static void recursive(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int source, ArrayList<Integer> res)
     {
         visited[source] = true; //in traverse time if source visited then store in res arraylist;
         res.add(source);
+
+        for(int i : adj.get(source) ) //recursively visit all adjacent vertex
+        {
+            if(!visited[i]) // not visited node pass to recursive method
+            {
+                recursive(adj, visited, i, res);
+            }
+        }
 
 
     }
