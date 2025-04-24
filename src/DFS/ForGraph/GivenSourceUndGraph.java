@@ -34,6 +34,9 @@ class dfsRec
 
     public static ArrayList<Integer> DFS(ArrayList<ArrayList<Integer>> adj)
     {
+        boolean[] visited = new boolean[adj.size()];
+        ArrayList<Integer> res = new ArrayList<>();
+        recursive(adj, visited, 0, res);
         return res;
     }
 
