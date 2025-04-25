@@ -28,9 +28,6 @@ public class GivenSourceUndGraph extends recursiveDFS {
             System.out.print(res.get(i));
         }
 
-
-
-
     }
 
 }
@@ -71,6 +68,5 @@ class recursiveDFS
         recursive(adjM, visited, 0,res);
         return res;
     }
-
 
 }
