@@ -32,6 +32,14 @@ public class disConUnd {
         boolean[] visited = new boolean[adj.size()];
         ArrayList<Integer> res = new ArrayList<>();
 
+        for (int i = 0; i < adj.size(); i++ )
+        {
+            if(!visited[i])
+            {
+                recursive(adj,visited, i, res);
+            }
+        }
+
 
         return res;
 
