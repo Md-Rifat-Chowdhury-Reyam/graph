@@ -5,6 +5,32 @@ import java.util.ArrayList;
 public class disConUnd {
     public static void main(String[] args) {
 
+        int v = 6;
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        //initialize adjacent list
+        for(int i = 0; i < v; i++)
+        {
+            adj.add(new ArrayList<>());
+            System.out.print(adj.get(i));
+
+        }
+        System.out.println();
+
+        int[][] edges = {{ 1, 2 }, { 2, 0 }, { 0, 3 }, { 4, 5 } };
+        for (int[] i : edges)
+        {
+            addEdges(adj, i[0], i[1]);
+
+        }
+
+        ArrayList<Integer> res = dfsM(adj);
+        for(int i : res)
+        {
+            System.out.print( i + " ");
+        }
+
+
     }
 
     public static void addEdges(ArrayList<ArrayList<Integer>> adjM, int s, int n)
@@ -22,7 +48,7 @@ public class disConUnd {
        {
            if(!visited[i])
            {
-               recursive(adj,visited, s, res);
+               recursive(adj,visited, i, res);
            }
        }
     }
@@ -39,7 +65,6 @@ public class disConUnd {
                 recursive(adj,visited, i, res);
             }
         }
-
 
         return res;
 
