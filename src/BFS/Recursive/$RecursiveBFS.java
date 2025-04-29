@@ -35,6 +35,11 @@ class LevelRecur
         {
             res.add(new ArrayList<>());
         }
+
+        res.get(level).add(root.data);
+
+        RecursiveMethod(root.left, level + 1, res);
+        RecursiveMethod(root.right, level + 1, res);
     }
 
 }
