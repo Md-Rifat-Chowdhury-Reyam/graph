@@ -33,7 +33,7 @@ public class $RecursiveBFS {
             for(int i = 0; i < level.size(); i++)
             {
                 System.out.print(level.get(i) );
-                if(i < level.size() -1)
+                if(i < level.size() - 1)
                 {
                     System.out.print(",");
                 }
